@@ -27,14 +27,14 @@ def test_predict_negative():
     assert json_data['label'] == 'NEGATIVE'
 
 
-def test_valid_text(text = "This is valid input"):
+def test_valid_text(text="This is valid input"):
     response = client.post("/predict/", json={"text": text})
     assert response.status_code == 200
     prediction = response.json()
     assert "label" in prediction
     assert "score" in prediction
 
-# Sentiment Prediction Test (Invalid Input)
-def test_invalid_text(text = ""):
+
+def test_invalid_text(text=""):
     response = client.post("/predict/", json={"text": text})
     assert response.status_code == 422
