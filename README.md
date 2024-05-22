@@ -26,8 +26,7 @@ streamlit run ./streamlit_web.py
 
 ## API methods
 - `root` (simple request to host) method returns "Hello world" string
-- `predict` method returns label result of sentiment analisis
-- `predict_score` method returns label result of sentiment analisis with score  
+- `predict` method returns label result of sentiment analisis 
 
 ## Launch the API
 
