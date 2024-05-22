@@ -1,16 +1,13 @@
 from fastapi import FastAPI
-from transformers import pipeline
 from pydantic import BaseModel
+from api import classifier
 
 
 class Item(BaseModel):
     text: str
 
 
-
 app = FastAPI()
-classifier = pipeline("sentiment-analysis")
-
 
 
 @app.get("/")
