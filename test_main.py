@@ -39,8 +39,8 @@ def test_predict_positive_negative():
 def test_predict_negative_a_lot():
     response = client.post('/predict/',
                            json={'text':
-                                 f"I love you, but I hate you, but I hate you,
-                                 but I hate you, but I hate you, but I hate you"
+                                 f"""I love you, but I hate you, but I hate you,
+                                 but I hate you, but I hate you, but I hate you"""
                                  })
     json_data = response.json()
     assert response.status_code == 200
