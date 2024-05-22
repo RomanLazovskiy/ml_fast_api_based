@@ -59,7 +59,6 @@ def test_predict_5050_firs_negative():
 def test_perdict():
     response = client.post('/perdict/',
                            json={'text': 'I hate you, but I love you'})
-    json_data = response.json()
     assert response.status_code != 200
 
 
@@ -69,6 +68,7 @@ def test_predict_Oleg():
     json_data = response.json()
     assert response.status_code == 200
     assert json_data['label'] == 'POSITIVE'
+
 
 def test_predict_Sanya():
     response = client.post('/predict/',
@@ -84,4 +84,3 @@ def test_predict_Adolf_Hitler():
     json_data = response.json()
     assert response.status_code == 200
     assert json_data['label'] == 'NEGATIVE'
-
