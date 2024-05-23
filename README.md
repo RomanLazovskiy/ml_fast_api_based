@@ -4,5 +4,9 @@
 
 An example of English text tone detection with [Hugging Face](https://huggingface.co/) library.
 
+## Installing + Running
 
-Tests GitHub Actions
+- > git clone https://github.com/RomanLazovskiy/ml_fast_api_basedx
+- > cd ml_fast_api_based
+- > python -m uvicorn modules.main:app
+
