@@ -5,6 +5,7 @@ from api import classifier
 
 class Item(BaseModel):
     text: str
+    sep: bool = True
 
 
 app = FastAPI()
@@ -17,4 +18,5 @@ def root():
 
 @app.post("/predict/")
 def predict(item: Item):
-    return classifier(item.text)[0]
+    result = get_model_result(text=item.text, sep=item.sep)
+    return result
