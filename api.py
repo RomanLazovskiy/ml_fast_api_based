@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
-from api import classifier
+from tools import get_model_result
+
 
 
 class Item(BaseModel):
