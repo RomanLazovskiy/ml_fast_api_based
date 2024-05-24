@@ -3,7 +3,6 @@ from pydantic import BaseModel
 from tools import get_model_result
 
 
-
 class Item(BaseModel):
     text: str
     sep: bool = True
