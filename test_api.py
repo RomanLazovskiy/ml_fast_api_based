@@ -15,7 +15,7 @@ def test_predict_positive():
                            json={"text": "I like machine learning!"})
     json_data = response.json()
     assert response.status_code == 200
-    assert json_data['label'] == 'POSITIVE'
+    assert json_data[0]['label'] == 'POSITIVE'
 
 
 def test_predict_negative():
@@ -23,4 +23,12 @@ def test_predict_negative():
                            json={"text": "I hate machine learning!"})
     json_data = response.json()
     assert response.status_code == 200
-    assert json_data['label'] == 'NEGATIVE'
+    assert json_data[0]['label'] == 'NEGATIVE'
+
+
+def test_predict_separate():
+    response = client.post("/predict/",
+                           json={"text": "I like machine learning! I"})
+    json_data = response.json()
+    assert response.status_code == 200
+    assert json_data[0]['label'] == 'POSITIVE'
