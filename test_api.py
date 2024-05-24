@@ -28,7 +28,9 @@ def test_predict_negative():
 
 def test_predict_separate():
     response = client.post("/predict/",
-                           json={"text": "I like machine learning! I hate neural networks. The weather is good today!",
+                           json={"text": "I like machine learning! "
+                                         "I hate neural networks. "
+                                         "The weather is good today!",
                                  "sep": True})
     json_data = response.json()
     assert response.status_code == 200

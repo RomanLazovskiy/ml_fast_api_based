@@ -9,8 +9,8 @@ sentences.")
 
 eval_sep = st.checkbox('Evaluate the sentences in the text separately', True)
 
-result = st.button("Evaluate!") 
-if result: 
-    st.subheader("Result:", divider='rainbow') 
-    result = get_model_result(text=in_text, sep=eval_sep) 
+result = st.button("Evaluate!")
+if result:
+    st.subheader("Result:", divider='rainbow')
+    result = get_model_result(text=in_text, sep=eval_sep)
     st.table(result)

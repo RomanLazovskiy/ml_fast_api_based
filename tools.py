@@ -1,6 +1,7 @@
 from razdel import sentenize
 from model import classifier
 
+
 def get_model_result(text, sep=True):
     '''
     text: str - Text to sentiment analysis
