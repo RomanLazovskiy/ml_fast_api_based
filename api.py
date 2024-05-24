@@ -1,16 +1,14 @@
 from fastapi import FastAPI
-from transformers import pipeline
 from pydantic import BaseModel
+from tools import get_model_result
 
 
 class Item(BaseModel):
     text: str
-
+    sep: bool = True
 
 
 app = FastAPI()
-classifier = pipeline("sentiment-analysis")
-
 
 
 @app.get("/")
@@ -20,4 +18,5 @@ def root():
 
 @app.post("/predict/")
 def predict(item: Item):
-    return classifier(item.text)[0]
+    result = get_model_result(text=item.text, sep=item.sep)
+    return result
