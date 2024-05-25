@@ -1,8 +1,26 @@
 [![Tests](https://github.com/tokarevsas31/ml_fastapi_tests/actions/workflows/python-app.yml/badge.svg)](https://github.com/tokarevsas31/ml_fastapi_tests/actions/workflows/python-app.yml)
 
-# An example of ML Application with the pretrained model and test.
+# Практическое задание №2
+#### Цель:
+- Научиться создавать pull request для проектов других разработчиков.
+### Задание:
+- Создайте копию (fork) репозитория на GitHub, содержащий пример проекта прошлого семестра курса программной инженерии – https://github.com/RomanLazovskiy/ml_fast_api_based
 
-An example of English text tone detection with [Hugging Face](https://huggingface.co/) library.
+- Подумайте, как можно улучшить приложение.
+Возможные варианты:  
+1. Разработка нового метода API.
+2. Создание нового теста.
+3. Создание документации (на приложение, на методы API и т.п.).
+4. Исправление стиля кода.
 
+### Реализация:
+- В своей копии создайте новую ветку для реализации придуманных вами улучшений.
+- Реализуйте предложенные улучшения в новой ветке.
+- Создайте pull request для включения ваших изменений в основной репозиторий проекта.
+- Реализуйте приложение в новой ветке
 
-Tests GitHub Actions
+### Предложенные исправления:
+- Создан файл python-app.yml для проверки кода.
+- Исправлен файл main.py для прохождения теста
+- Добавлен новый тест
+- Изменено описание
