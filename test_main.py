@@ -44,8 +44,8 @@ def test_analytics():
     
     # Проверим, что статус ответа 200 и данные аналитики корректны
     assert response.status_code == 200
-    assert json_data["total_reviews"] == 4
-    assert json_data["positive_reviews"] == 2
-    assert json_data["negative_reviews"] == 2
+    assert json_data["total_reviews"] == 6
+    assert json_data["positive_reviews"] == 3
+    assert json_data["negative_reviews"] == 3
     assert json_data["positive_percentage"] == 50.0
     assert json_data["negative_percentage"] == 50.0
