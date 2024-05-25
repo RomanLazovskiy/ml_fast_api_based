@@ -1,6 +1,7 @@
 from fastapi import Body, FastAPI
-from transformers import pipeline
 from pydantic import BaseModel
+
+from services import predict_service
 
 
 class Item(BaseModel):
@@ -12,7 +13,6 @@ class Item(BaseModel):
 
 
 app = FastAPI()
-classifier = pipeline("sentiment-analysis")
 
 
 @app.get("/", include_in_schema=False)
@@ -22,10 +22,9 @@ def root():
 
 @app.post(
     "/predict/",
-    response_model=Item,
     summary="Make sentiment analysis",
     description="""Make sentiment analysis
          using sentiment-analysis HuggingFace model""",
 )
 def predict(item: Item):
-    return classifier(item.text)[0]
+    return predict_service.make_sentiment_analysis(item.text)
