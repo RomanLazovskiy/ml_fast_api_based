@@ -22,6 +22,14 @@ def root():
 
 @app.post("/predict/")
 def predict(item: Item):
+    """
+    Метод принимает текст и возвращает предсказанное настроение.
+
+    :param item: Текст, который требуется классифицировать.
+    :type item: Item
+    :return: Результат классификации.
+    :rtype: dict
+    """
     global positive_reviews_count, negative_reviews_count
 
     prediction = classifier(item.text)[0]
@@ -35,6 +43,12 @@ def predict(item: Item):
 
 @app.get("/analytics")
 def get_analytics():
+    """
+    Метод возвращает аналитические данные по результатам классификации.
+
+    :return: Аналитика по результатам классификации.
+    :rtype: dict
+    """
     global positive_reviews_count, negative_reviews_count
 
     analytics_data = {
