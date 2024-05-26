@@ -60,7 +60,7 @@ def test_predict_positive_weather_conditional():
 
 
 def test_predict_negative_weather_sarcasm():
-    r = cl.post("/predict/", json={"text": "Oh, another rainy day..."})
+    r = cl.post("/predict/", json={"text": "Oh, another rainy day ..."})
     json_data = r.json()
     assert r.status_code == 200
     assert json_data["label"] == "NEGATIVE"
