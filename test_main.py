@@ -12,7 +12,7 @@ def test_read_main():
 
 def test_predict_positive():
     response = client.post("/predict/",
-                           json={"text": "I like machine learning!"})
+                           json={"text": "Apples are my favourite!"})
     json_data = response.json()
     assert response.status_code == 200
     assert json_data['label'] == 'POSITIVE'
@@ -20,7 +20,7 @@ def test_predict_positive():
 
 def test_predict_negative():
     response = client.post("/predict/",
-                           json={"text": "I hate machine learning!"})
+                           json={"text": "I'm not into hiking."})
     json_data = response.json()
     assert response.status_code == 200
     assert json_data['label'] == 'NEGATIVE'
