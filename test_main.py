@@ -20,7 +20,7 @@ def test_predict_positive():
 
 def test_predict_negative():
     response = client.post("/predict/",
-                           json={"text": "I'm not into hiking."})
+                           json={"text": "I'm not into hiking!"})
     json_data = response.json()
     assert response.status_code == 200
     assert json_data['label'] == 'NEGATIVE'
